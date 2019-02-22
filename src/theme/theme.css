@@ -9,3 +9,45 @@
 ---- */
 
 html, body { background-color: #fafafa }
+
+.main-wrapper {
+    min-height: 100vh;
+    overflow-x: hidden !important;
+}
+
+
+
+/* ----
+----------- Menu
+---- */
+#menu {
+    min-height: 100% !important;
+    max-height: 100% !important;
+    overflow: hidden !important;
+}
+
+#menu__site-name {}
+#menu__site-name h1 {
+    text-transform: uppercase;
+    letter-spacing:2px;
+    user-select: none;
+    transition:0.5s;
+}
+
+#menu__site-name h1:hover { letter-spacing:10px; }
+
+#menu_color-history {
+    height: auto !important;
+    overflow-x: hidden !important;
+}
+
+
+/* ----
+----------- Colors
+---- */
+#generated_color, #primary_color {
+    height:50% !important;
+}
+
+#generated_Color {}
+#primary_color {}
