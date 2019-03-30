@@ -57,10 +57,13 @@ class Menu extends Component {
 
                     <div className="card">
                         <div className="card-header" id="headingTwo">
-                            <h2 className="mb-0">
+                            <h2 className="mb-0 col-lg-12 row justify-content-between align-items-center">
                                 <button className="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#history" aria-expanded="false" aria-controls="history">
                                     History
                                 </button>
+                                <small className="text-secondary">
+                                    {this.props.history.length}
+                                </small>
                             </h2>
                         </div>
 
