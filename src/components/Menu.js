@@ -2,6 +2,7 @@
 // Dependencies
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import * as actions from '../actions';
 
 
 // -----
@@ -12,6 +13,18 @@ import PreviousColor from './PreviousColor';
 // -----
 // Menu class
 class Menu extends Component {
+
+    isTypingPrimary( value ) {
+        this.props.setPrimary( value );
+    }
+
+    isTypingSecondary( value ) {
+        this.props.setSecondary( value );
+    }
+
+    isTypingTertiary( value ) {
+        this.props.setTertiary( value );
+    }
 
     renderColorHistory() {
         if ( this.props.history ) {
@@ -49,8 +62,45 @@ class Menu extends Component {
                         </div>
 
                         <div id="settings" className="col-lg-12 collapse show" aria-labelledby="headingOne" data-parent="#accordionMenu">
-                            <div className="card-body">
-                                SETTINGS HERE
+                            <div className="card-body col-lg-12 d-flex flex-column">
+
+                                <div className="bg-white d-flex flex-column text-left">
+                                    <strong className="text-secondary">
+                                        Primary Contrast Color
+                                    </strong>
+                                    <input 
+                                        className="p-2 mt-1 form-control" 
+                                        type="text" 
+                                        placeholder="Accepts any valid CSS color value" 
+                                        onChange={( event ) => this.isTypingPrimary( event.target.value )}
+                                    />
+                                </div>
+
+                                <div className="mt-4 bg-white d-flex flex-column text-left">
+                                    <strong className="text-secondary">
+                                        Secondary Contrast Color
+                                    </strong>
+                                    <input 
+                                        className="p-2 mt-1 form-control" 
+                                        type="text" 
+                                        placeholder="Accepts any valid CSS color value" 
+                                        onChange={( event ) => this.isTypingSecondary( event.target.value )}
+                                    />
+                                </div>
+
+                                <div className="mt-4 bg-white d-flex flex-column text-left">
+                                    <strong className="text-secondary">
+                                        Tertiary Contrast Color
+                                    </strong>
+                                    
+                                    <input 
+                                        className="p-2 mt-1 form-control" 
+                                        type="text" 
+                                        placeholder="Accepts any valid CSS color value" 
+                                        onChange={( event ) => this.isTypingTertiary( event.target.value )}
+                                    />
+                                </div>
+
                             </div>
                         </div>
                     </div>
@@ -61,9 +111,10 @@ class Menu extends Component {
                                 <button className="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#history" aria-expanded="false" aria-controls="history">
                                     History
                                 </button>
-                                <small className="text-secondary">
+
+                                <span class="badge badge-pill badge-secondary">
                                     {this.props.history.length}
-                                </small>
+                                </span>
                             </h2>
                         </div>
 
@@ -88,4 +139,4 @@ function mapStateToProps({ history }) {
 
 // ----
 // Export
-export default connect( mapStateToProps, {} )( Menu );
+export default connect( mapStateToProps, actions )( Menu );

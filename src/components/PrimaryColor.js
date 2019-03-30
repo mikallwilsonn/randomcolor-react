@@ -9,34 +9,33 @@ import * as actions from '../actions';
 // GeneratedColor class
 class PrimaryColor extends Component {
 
-    isTyping( value ) {
-        this.props.setPrimary( value );
-    }
-
     render() {
         return (
-            <div 
-                id="primary_color"
-                className="col-lg-12 d-flex justify-content-center align-items-center" 
-                style={{ backgroundColor: this.props.primary || '#FFF' }}
-            >
-                <div className="bg-white p-5 text-center d-flex flex-column justify-content-center align-items-center">
-                    Enter in a color value for contrast comparison.
-                    <input 
-                        className="p-2 mt-2 form-control" 
-                        type="text" 
-                        placeholder="Accepts any valid CSS color value" 
-                        onChange={( event ) => this.isTyping( event.target.value )}
-                    />
-                </div>
+            <div className="col-lg-12 row m-0 p-0 flex-nowrap">
+                <div 
+                    id="primary_color"
+                    className="col-lg-4 d-flex justify-content-center align-items-center" 
+                    style={{ backgroundColor: this.props.primary || '#FFF' }}
+                ></div>
+                <div 
+                    id="secondary_color"
+                    className="col-lg-4 d-flex justify-content-center align-items-center" 
+                    style={{ backgroundColor: this.props.secondary || '#7F7F7F' }}
+                ></div>
+                <div 
+                    id="tertiary_color"
+                    className="col-lg-4 d-flex justify-content-center align-items-center" 
+                    style={{ backgroundColor: this.props.tertiary || '#000' }}
+                ></div>
             </div>
+
         );
     }
 }
 
 
-function mapStateToProps({ primary }) {
-    return { primary };
+function mapStateToProps({ primary, secondary, tertiary }) {
+    return { primary, secondary, tertiary };
 }
 
 // -----
