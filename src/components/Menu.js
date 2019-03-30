@@ -73,6 +73,8 @@ class Menu extends Component {
                                         type="text" 
                                         placeholder="Accepts any valid CSS color value" 
                                         onChange={( event ) => this.isTypingPrimary( event.target.value )}
+                                        value={this.props.primary || ''} 
+                                        style={{ border: `4px solid ${this.props.primary || '#DDD'}` }}
                                     />
                                 </div>
 
@@ -84,7 +86,9 @@ class Menu extends Component {
                                         className="p-2 mt-1 form-control" 
                                         type="text" 
                                         placeholder="Accepts any valid CSS color value" 
-                                        onChange={( event ) => this.isTypingSecondary( event.target.value )}
+                                        onChange={( event ) => this.isTypingSecondary( event.target.value )} 
+                                        value={this.props.secondary || ''} 
+                                        style={{ border: `4px solid ${this.props.secondary || '#DDD'}` }}
                                     />
                                 </div>
 
@@ -97,7 +101,9 @@ class Menu extends Component {
                                         className="p-2 mt-1 form-control" 
                                         type="text" 
                                         placeholder="Accepts any valid CSS color value" 
-                                        onChange={( event ) => this.isTypingTertiary( event.target.value )}
+                                        onChange={( event ) => this.isTypingTertiary( event.target.value )} 
+                                        value={this.props.tertiary || ''} 
+                                        style={{ border: `4px solid ${this.props.tertiary || '#DDD'}` }}
                                     />
                                 </div>
 
@@ -132,8 +138,8 @@ class Menu extends Component {
 }
 
 
-function mapStateToProps({ history }) {
-    return { history };
+function mapStateToProps({ history, primary, secondary, tertiary }) {
+    return { history, primary, secondary, tertiary };
 }
 
 
