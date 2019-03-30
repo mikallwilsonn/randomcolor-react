@@ -62,7 +62,9 @@ class Menu extends Component {
                         <div className="card-header" id="headingOne">
                             <h2 className="mb-0">
                                 <button className="btn btn-link" type="button" data-toggle="collapse" data-target="#settings" aria-expanded="true" aria-controls="settings">
-                                    Settings
+                                    <strong>
+                                        Contrast Colors
+                                    </strong>
                                 </button>
                             </h2>
                         </div>
@@ -70,14 +72,16 @@ class Menu extends Component {
                         <div id="settings" className="col-lg-12 collapse show" aria-labelledby="headingOne" data-parent="#accordionMenu">
                             <div className="card-body col-lg-12 d-flex flex-column">
 
+                                <p className="text-muted">Enter any valid CSS color value: hex, rgb, rgba, hsl, or hsla</p>
+
                                 <div className="bg-white d-flex flex-column text-left">
                                     <strong className="text-secondary">
-                                        1. Primary Contrast Color
+                                        Primary <span className="text-muted">(1)</span>
                                     </strong>
                                     <input 
                                         className="p-2 mt-1 form-control" 
                                         type="text" 
-                                        placeholder="Accepts any valid CSS color value" 
+                                        placeholder="Example: #DDD" 
                                         onChange={( event ) => this.isTypingPrimary( event.target.value )}
                                         value={this.props.primary || ''} 
                                         style={{ border: `4px solid ${this.props.primary || '#DDD'}` }}
@@ -86,12 +90,12 @@ class Menu extends Component {
 
                                 <div className="mt-4 bg-white d-flex flex-column text-left">
                                     <strong className="text-secondary">
-                                        2. Secondary Contrast Color
+                                        Secondary <span className="text-muted">(2)</span>
                                     </strong>
                                     <input 
                                         className="p-2 mt-1 form-control" 
                                         type="text" 
-                                        placeholder="Accepts any valid CSS color value" 
+                                        placeholder="Example: rgb( 125, 75, 20 )" 
                                         onChange={( event ) => this.isTypingSecondary( event.target.value )} 
                                         value={this.props.secondary || ''} 
                                         style={{ border: `4px solid ${this.props.secondary || '#DDD'}` }}
@@ -100,13 +104,13 @@ class Menu extends Component {
 
                                 <div className="mt-4 bg-white d-flex flex-column text-left">
                                     <strong className="text-secondary">
-                                        3. Tertiary Contrast Color
+                                        Tertiary <span className="text-muted">(3)</span>
                                     </strong>
                                     
                                     <input 
                                         className="p-2 mt-1 form-control" 
                                         type="text" 
-                                        placeholder="Accepts any valid CSS color value" 
+                                        placeholder="Example: hsl( 50, 10%, 80% )" 
                                         onChange={( event ) => this.isTypingTertiary( event.target.value )} 
                                         value={this.props.tertiary || ''} 
                                         style={{ border: `4px solid ${this.props.tertiary || '#DDD'}` }}
@@ -121,7 +125,9 @@ class Menu extends Component {
                         <div className="card-header" id="headingTwo">
                             <h2 className="mb-0 col-lg-12 row justify-content-between align-items-center">
                                 <button className="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#history" aria-expanded="false" aria-controls="history">
-                                    History
+                                    <strong>
+                                        History
+                                    </strong>
                                 </button>
 
                                 <span class="badge badge-pill badge-secondary">

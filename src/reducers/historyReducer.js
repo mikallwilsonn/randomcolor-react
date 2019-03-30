@@ -1,7 +1,11 @@
 export default function( state = [], action ) {
     switch ( action.type ) {
         case 'history':
-            return [action.payload, ...state];
+            if ( !state.includes( action.payload ) ) {
+                return [action.payload, ...state];
+            } else {
+                return state;
+            }
         default:
             return state;
     }

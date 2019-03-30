@@ -37,6 +37,13 @@ class PreviousColor extends Component {
                                 className="dropdown-item" 
                                 onClick={()=> this.props.setTertiary( value )}
                             >Set As Tertiary</button>
+
+                            <div className="dropdown-divider"></div>
+
+                            <button 
+                                className="dropdown-item" 
+                                onClick={()=> this.props.setAsCurrent( value )}
+                            >Set As Current</button>
                         </div>
                     </div>
                 </div>
