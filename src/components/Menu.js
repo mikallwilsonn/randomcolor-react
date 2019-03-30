@@ -72,7 +72,7 @@ class Menu extends Component {
 
                                 <div className="bg-white d-flex flex-column text-left">
                                     <strong className="text-secondary">
-                                        Primary Contrast Color
+                                        1. Primary Contrast Color
                                     </strong>
                                     <input 
                                         className="p-2 mt-1 form-control" 
@@ -86,7 +86,7 @@ class Menu extends Component {
 
                                 <div className="mt-4 bg-white d-flex flex-column text-left">
                                     <strong className="text-secondary">
-                                        Secondary Contrast Color
+                                        2. Secondary Contrast Color
                                     </strong>
                                     <input 
                                         className="p-2 mt-1 form-control" 
@@ -100,7 +100,7 @@ class Menu extends Component {
 
                                 <div className="mt-4 bg-white d-flex flex-column text-left">
                                     <strong className="text-secondary">
-                                        Tertiary Contrast Color
+                                        3. Tertiary Contrast Color
                                     </strong>
                                     
                                     <input 
