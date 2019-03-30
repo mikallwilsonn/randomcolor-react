@@ -24,7 +24,7 @@ class GeneratedColor extends Component {
                 <div className="bg-white p-5 pb-3 text-center">
                     <button onClick={() => this.onNewColor() }
                     className="btn btn-block btn-primary p-3 mb-2">
-                        Generate A New Random Color
+                        Generate A New Color
                     </button>
                     <span className="text-muted">{this.props.random}</span>
                 </div>

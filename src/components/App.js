@@ -22,7 +22,6 @@ class App extends Component {
 
     componentDidMount() {
         this.props.randomColor();
-        console.log( this.state );
     }
 
     render() {
