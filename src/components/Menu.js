@@ -32,7 +32,7 @@ class Menu extends Component {
                     id="menu__site-name"
                 >  
                     <h1 className="h2">AimlessHues</h1>
-                    <h2 className="h6 text-muted">Generate random HEX colors.</h2>
+                    <h2 className="h6 text-muted">Quickly generate random colors.</h2>
                     <span className="text-muted">Created by <a href="https://github.com/mikallwilsonn/" target="_blank" rel="noopener noreferrer">Michael R. Wilson</a></span>
                 </div>
 
