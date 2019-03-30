@@ -18,3 +18,7 @@ export const setSecondary = ( value ) => dispatch => {
 export const setTertiary = ( value ) => dispatch => {
     dispatch({ type: 'set_tertiary', payload: value });
 }
+
+export const setAsCurrent = ( value ) => dispatch => {
+    dispatch({ type: 'set_as_current', payload: value });
+}

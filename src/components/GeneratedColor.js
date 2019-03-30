@@ -52,6 +52,7 @@ class GeneratedColor extends Component {
                                     className="dropdown-item" 
                                     onClick={()=> this.props.setTertiary( this.props.random )}
                                 >Set As Tertiary</button>
+
                             </div>
                         </div>
                     </div>
