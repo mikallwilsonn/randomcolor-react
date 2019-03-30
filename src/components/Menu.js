@@ -27,7 +27,13 @@ class Menu extends Component {
     }
 
     renderColorHistory() {
-        if ( this.props.history ) {
+        if ( this.props.history.length < 1 ) {
+            return (
+                <p className="text-secondary col-lg-12 p-3">
+                    Generate a new color to add the current color to the History.
+                </p>
+            );
+        } else {
             return this.props.history.map( color => {
                 return <PreviousColor key={color} value={color} />
             });
