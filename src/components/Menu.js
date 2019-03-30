@@ -36,12 +36,42 @@ class Menu extends Component {
                     <span className="text-muted">Created by <a href="https://github.com/mikallwilsonn/" target="_blank" rel="noopener noreferrer">Michael R. Wilson</a></span>
                 </div>
 
-                <div
-                    id="menu_color-history"
-                    className="bg-light p-2 pb-5 col-lg-12 d-flex flex-wrap justify-content-center align-items-center"
-                >
-                    {this.renderColorHistory()}
+
+
+                <div className="accordion col-lg-12" id="accordionMenu">
+                    <div className="card">
+                        <div className="card-header" id="headingOne">
+                            <h2 className="mb-0">
+                                <button className="btn btn-link" type="button" data-toggle="collapse" data-target="#settings" aria-expanded="true" aria-controls="settings">
+                                    Settings
+                                </button>
+                            </h2>
+                        </div>
+
+                        <div id="settings" className="col-lg-12 collapse show" aria-labelledby="headingOne" data-parent="#accordionMenu">
+                            <div className="card-body">
+                                SETTINGS HERE
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="card">
+                        <div className="card-header" id="headingTwo">
+                            <h2 className="mb-0">
+                                <button className="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#history" aria-expanded="false" aria-controls="history">
+                                    History
+                                </button>
+                            </h2>
+                        </div>
+
+                        <div id="history" className="collapse" aria-labelledby="headingTwo" data-parent="#accordionMenu">
+                            <div className="card-body col-lg-12 color-history d-flex row flex-nowrap">
+                                {this.renderColorHistory()}
+                            </div>
+                        </div>
+                    </div>
                 </div>
+
             </div>
         );
     }
