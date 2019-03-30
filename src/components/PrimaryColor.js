@@ -14,19 +14,19 @@ class PrimaryColor extends Component {
             <div className="col-lg-12 row m-0 p-0 flex-nowrap">
                 <div 
                     id="primary_color"
-                    className="col-lg-4 d-flex justify-content-center align-items-center" 
+                    className="col-lg-4 p-0" 
                     style={{ backgroundColor: this.props.primary || '#FFF' }}
-                ></div>
+                ><span className="contrast-tag m-0">1</span></div>
                 <div 
                     id="secondary_color"
-                    className="col-lg-4 d-flex justify-content-center align-items-center" 
+                    className="col-lg-4 p-0" 
                     style={{ backgroundColor: this.props.secondary || '#7F7F7F' }}
-                ></div>
+                ><span className="contrast-tag m-0">2</span></div>
                 <div 
                     id="tertiary_color"
-                    className="col-lg-4 d-flex justify-content-center align-items-center" 
+                    className="col-lg-4 p-0" 
                     style={{ backgroundColor: this.props.tertiary || '#000' }}
-                ></div>
+                ><span className="contrast-tag m-0">3</span></div>
             </div>
 
         );
