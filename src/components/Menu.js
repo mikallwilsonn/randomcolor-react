@@ -47,29 +47,32 @@ class Menu extends Component {
                 className="bg-white col-lg-3 m-0 p-0"
             >
                 <div
-                    className="col-lg-12 text-center p-5"
+                    className="col-lg-12 text-center p-3"
                     id="menu__site-name"
                 >  
-                    <h1 className="h2">AimlessHues</h1>
-                    <h2 className="h6 text-muted">Quickly generate random colors.</h2>
-                    <span className="text-muted">Created by <a href="https://github.com/mikallwilsonn/" target="_blank" rel="noopener noreferrer">Michael R. Wilson</a></span>
+                    <div className="bg-white p-3 pt-5 pb-5">
+                        <h1 className="h1 font-regular text-theme-dark-faded">AimlessHues</h1>
+                        <h2 className="h6 text-muted">Quickly generate random colors.</h2>
+                        <span className="text-muted">Created by <a className="font-regular text-theme-dark-faded" href="https://github.com/mikallwilsonn/" target="_blank" rel="noopener noreferrer">Michael R. Wilson</a></span>
+                    </div>
+
                 </div>
 
 
 
                 <div className="accordion col-lg-12" id="accordionMenu">
                     <div className="card">
-                        <div className="card-header" id="headingOne">
-                            <h2 className="mb-0">
-                                <button className="btn btn-link" type="button" data-toggle="collapse" data-target="#settings" aria-expanded="true" aria-controls="settings">
-                                    <strong>
-                                        Contrast Colors
+                        <div className="card-header p-0 bg-white" id="headingOne">
+                            <h2 className="mb-0 p-0">
+                                <button className="ml-0 text-decoration-none  btn btn-link h-100 w-100 p-3 text-left" type="button" data-toggle="collapse" data-target="#settings" aria-expanded="true" aria-controls="settings">
+                                    <strong className="text-theme-dark-faded">
+                                        Set Contrast Colors
                                     </strong>
                                 </button>
                             </h2>
                         </div>
 
-                        <div id="settings" className="col-lg-12 collapse show" aria-labelledby="headingOne" data-parent="#accordionMenu">
+                        <div id="settings" className="col-lg-12 collapse" aria-labelledby="headingOne" data-parent="#accordionMenu">
                             <div className="card-body col-lg-12 d-flex flex-column">
 
                                 <p className="text-muted">Enter any valid CSS color value: hex, rgb, rgba, hsl, or hsla</p>
@@ -79,12 +82,12 @@ class Menu extends Component {
                                         Primary <span className="text-muted">(1)</span>
                                     </strong>
                                     <input 
-                                        className="p-2 mt-1 form-control" 
+                                        className="p-2 mt-1 form-control font-monospace" 
                                         type="text" 
                                         placeholder="Example: #DDD" 
                                         onChange={( event ) => this.isTypingPrimary( event.target.value )}
                                         value={this.props.primary || ''} 
-                                        style={{ border: `4px solid ${this.props.primary || '#DDD'}` }}
+                                        style={{ borderLeft: `15px solid ${this.props.primary || '#FFF'}` }}
                                     />
                                 </div>
 
@@ -93,12 +96,12 @@ class Menu extends Component {
                                         Secondary <span className="text-muted">(2)</span>
                                     </strong>
                                     <input 
-                                        className="p-2 mt-1 form-control" 
+                                        className="p-2 mt-1 form-control font-monospace" 
                                         type="text" 
                                         placeholder="Example: rgb( 125, 75, 20 )" 
                                         onChange={( event ) => this.isTypingSecondary( event.target.value )} 
                                         value={this.props.secondary || ''} 
-                                        style={{ border: `4px solid ${this.props.secondary || '#DDD'}` }}
+                                        style={{ borderLeft: `15px solid ${this.props.secondary || '#DDD'}` }}
                                     />
                                 </div>
 
@@ -108,12 +111,12 @@ class Menu extends Component {
                                     </strong>
                                     
                                     <input 
-                                        className="p-2 mt-1 form-control" 
+                                        className="p-2 mt-1 form-control font-monospace" 
                                         type="text" 
                                         placeholder="Example: hsl( 50, 10%, 80% )" 
                                         onChange={( event ) => this.isTypingTertiary( event.target.value )} 
                                         value={this.props.tertiary || ''} 
-                                        style={{ border: `4px solid ${this.props.tertiary || '#DDD'}` }}
+                                        style={{ borderLeft: `15px solid ${this.props.tertiary || '#000'}` }}
                                     />
                                 </div>
 
@@ -121,23 +124,24 @@ class Menu extends Component {
                         </div>
                     </div>
 
-                    <div className="card">
-                        <div className="card-header" id="headingTwo">
-                            <h2 className="mb-0 col-lg-12 row justify-content-between align-items-center">
-                                <button className="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#history" aria-expanded="false" aria-controls="history">
-                                    <strong>
+                    <div className="card mb-5">
+                        <div className="card-header p-0 bg-white" id="headingTwo">
+                            <h2 className="mb-0 p-0">
+                                <button className="ml-0 text-decoration-none  btn btn-link col-lg-12 h-100 p-3 d-flex row justify-content-between align-items-center" type="button" data-toggle="collapse" data-target="#history" aria-expanded="false" aria-controls="history">
+                                    <strong className="pl-0 col-auto text-left text-theme-dark-faded">
                                         History
                                     </strong>
+                                    
+                                    <span className="col-auto mr-3 text-right badge badge-pill badge-secondary">
+                                        {this.props.history.length}
+                                    </span>
                                 </button>
-
-                                <span class="badge badge-pill badge-secondary">
-                                    {this.props.history.length}
-                                </span>
                             </h2>
                         </div>
 
-                        <div id="history" className="collapse" aria-labelledby="headingTwo" data-parent="#accordionMenu">
-                            <div className="card-body col-lg-12 color-history d-flex row flex-nowrap">
+
+                        <div id="history" className="p-0 collapse show" aria-labelledby="headingTwo" data-parent="#accordionMenu">
+                            <div className="m-0 card-body col-lg-12 color-history d-flex row flex-nowrap">
                                 {this.renderColorHistory()}
                             </div>
                         </div>
